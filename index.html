@@ -12,7 +12,7 @@
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #322537
+            background-color: #fdf6e3;
         }
 
         .container {
@@ -21,104 +21,190 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: lightgrey;
+            text-align: justify;
+            color: #333333;
+            padding: 20px;
         }
 
         a {
-            color: lightgrey;
-            text-decoration: underline;
+            color: #0066cc;
+            text-decoration: none;
         }
 
         a:hover {
-            color: black;
+            color: #003366;
+            text-decoration: underline;
+        }
+
+        .language-selector {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .lang-link {
+            font-size: 24px;
+            padding: 8px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
             text-decoration: none;
-        }
-
-        main {
-            max-width: 600px;
-        }
-
-        .logo {
-            max-width: 300px;
-            margin-bottom: 20px;
-        }
-
-        .description {
-            margin-bottom: 0px;
-        }
-
-        .articles-list {
-            list-style-type: none;
-            padding: 0;
-            margin-bottom: 20px;
-        }
-
-        .articles-list li {
-            margin-bottom: 10px;
-        }
-
-        .articles-list a {
-            text-decoration: none;
-            color: lightgrey;
-            transition: color 0.3s ease;
-        }
-
-        .articles-list a:hover {
-            color: black;
-        }
-
-        .icon-bar a {
             display: inline-block;
-            margin: 0 10px;
-            color: inherit;
+        }
+
+        .lang-link.active {
+            border-color: #0066cc;
+        }
+
+        .lang-link:hover {
+            transform: scale(1.1);
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: 30px;
+            max-width: 800px;
+            line-height: 1.6;
         }
 
         .icon-bar i {
-            font-size: 2em;
-            /* Icon size */
-            transition: transform 0.3s ease;
+            color: #0066cc;
         }
 
         .icon-bar i:hover {
             transform: scale(1.1);
-            color: black;
+            color: #003366;
         }
 
-        .icon-bar {
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+        header {
             margin-bottom: 20px;
         }
     </style>
+
+    <script>
+        function changeLanguage(lang) {
+            document.getElementById('content-en').style.display = 'none';
+            document.getElementById('content-pt').style.display = 'none';
+            
+            document.getElementById(`content-${lang}`).style.display = 'block';
+            
+            document.querySelectorAll('.lang-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const storedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(storedLang);
+        });
+    </script>
 </head>
 
 <body>
 
     <div class="container">
         <header>
-            <img src="santacroce_transparent.png" alt="Santacroce Tech" class="logo">
+            <img src="santacroce_transparent_2.png" alt="Santacroce Tech" class="logo">
         </header>
 
         <main>
-            <section>
-                <p>We're a dedicated team deeply engaged in the blockchain technology landscape.</p>
-            </section>
+            <div class="language-selector">
+                <a href="#" onclick="changeLanguage('en')" class="lang-link" title="English">🇬🇧</a>
+                <a href="#" onclick="changeLanguage('pt')" class="lang-link" title="Português">🇧🇷</a>
+            </div>
 
-            <section>
-                <h3>What we do ?</h3>
-                <p>Contribute with open souce software</p>                
-                <p>Tech Consulting and Advisory</p>
-            </section>
-            <section>
-                <h3>Our digest</h3>
-                <ul class="articles-list">
-                    <li>
-                        <a href="https://santacroce.xyz/assets/bitcoin_halving_santacroce_tech_1-en.pdf" target="_blank"
-                            rel="noopener noreferrer">
-                            Santacroce Tech Digest #1 - Bitcoin Halving
-                        </a>
-                    </li>
-                </ul>
-            </section>
+            <div id="content-en">
+                <section>
+                    <p>We're a dedicated team deeply engaged in the blockchain technology landscape.</p>
+                </section>
+
+                <section>
+                    <p>Santacroce Tech is a company dedicated to blockchain technology, focusing on scalability and
+                        decentralization. We are actively involved in open-source development around Bitcoin, contributing
+                        to initiatives like Stratum V2 and Drivechain, which aim to enhance efficiency, flexibility, and
+                        innovation within the ecosystem.
+                        Our expertise is bolstered by decades of experience in the technology industry and established
+                        relationships within the sector. We actively participate in initiatives like the Bitcoin Center NY
+                        and contribute to notable projects such as BRZ, Brazil's first stablecoin, and Alkimiya, which
+                        focuses on the tokenization of financial streams related to cryptocurrency mining.
+                        These experiences position us as strategic partners, equipped to offer valuable insights and act as
+                        advisors to executive teams in making critical technological decisions.</p>
+                </section>
+                <section>
+                    <h3>Latest Publications</h3>
+                    <ul class="articles-list">
+                        <li>
+                            <a href="https://santacroce.xyz/assets/2024-11-ENG_Newsletter_III-Santacroce.pdf" target="_blank"
+                                rel="noopener noreferrer">
+                                Bitcoin Mining Centralization - Third Edition
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://santacroce.xyz/assets/2024-10-ENG_Newsletter_II-Santacroce.pdf" target="_blank"
+                                rel="noopener noreferrer">
+                                Bitcoin Mining - Second Edition
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://santacroce.xyz/assets/2024-03-ENG_Newsletter-Santacroce.pdf" target="_blank"
+                                rel="noopener noreferrer">
+                                Bitcoin Halving - Our first edition
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <div id="content-pt" style="display: none;">
+                <section>
+                    <p>Somos uma equipe dedicada profundamente envolvida no cenário da tecnologia blockchain.</p>
+                </section>
+
+                <section>
+                    <p>A Santacroce Tech é uma empresa dedicada à tecnologia blockchain, com foco em escalabilidade e
+                        descentralização. Estamos ativamente envolvidos no desenvolvimento open-source do Bitcoin, contribuindo
+                        para iniciativas como Stratum V2 e Drivechain, que visam melhorar a eficiência, flexibilidade e
+                        inovação dentro do ecossistema.
+                        Nossa expertise é fortalecida por décadas de experiência na indústria de tecnologia e relacionamentos
+                        estabelecidos no setor. Participamos ativamente de iniciativas como o Bitcoin Center NY
+                        e contribuímos para projetos notáveis como o BRZ, primeiro stablecoin do Brasil, e Alkimiya, que
+                        foca na tokenização de fluxos financeiros relacionados à mineração de criptomoedas.
+                        Essas experiências nos posicionam como parceiros estratégicos, equipados para oferecer insights
+                        valiosos e atuar como consultores para equipes executivas em decisões tecnológicas críticas.</p>
+                </section>
+                <section>
+                    <h3>Últimas Publicações</h3>
+                    <ul class="articles-list">
+                        <li>
+                            <a href="https://santacroce.xyz/assets/2024-11-PT-BR_Newsletter_III-Santacroce.pdf" target="_blank"
+                                rel="noopener noreferrer">
+                                Centralização da Mineração Bitcoin - Terceira Edição
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://santacroce.xyz/assets/2024-10-PT-BR_Newsletter_II-Santacroce.pdf" target="_blank"
+                                rel="noopener noreferrer">
+                                Mineração Bitcoin - Segunda Edição
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://santacroce.xyz/assets/2024-03-PT-BR_Newsletter-Santacroce.pdf" target="_blank"
+                                rel="noopener noreferrer">
+                                Halving do Bitcoin - Nossa primeira edição
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
         </main>
 
         <aside>
