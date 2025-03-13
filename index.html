@@ -5,18 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santacroce Tech Digital Services</title>
     <style>
-        body { font-family: 'Georgia', serif; margin: 20px; padding: 20px; display: flex; align-items: flex-start; }
-        .content { max-width: 700px; }
-        img { max-width: 300px; height: auto; margin-left: 20px; }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #222;
+        }
+
+        p, ul {
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .logo-container img {
+                max-width: 150px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="content">
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="image.png" alt="Company Logo">
+        </div>
+
         <h1>Santacroce Tech Digital Services</h1>
-        
+
         <h2>Our Mission</h2>
         <p>We leverage deep technical expertise to create secure and scalable solutions in blockchain and AI. Our mission is to help businesses and individuals navigate and thrive in a digital-first world.</p>
-        
+
         <h2>Our Expertise</h2>
         <ul>
             <li>Custom Bitcoin Software – Development of Bitcoin applications, wallet solutions, and blockchain explorers.</li>
@@ -25,7 +96,7 @@
             <li>Smart Contracts & Web3 – Secure and efficient development for Ethereum, Solana, and decentralized applications.</li>
             <li>Storage Consultation – Scalable storage solutions for blockchain and AI systems.</li>
         </ul>
-        
+
         <h2>Latest Newsletters</h2>
         <ul>
             <li><a href="2024-03-ENG-Santacroce.pdf">March 2024 - Bitcoin Market Trends (English)</a></li>
@@ -37,31 +108,30 @@
             <li><a href="2025-03-ENG-Santacroce.pdf">March 2025 - Future of Decentralized Tech (English)</a></li>
             <li><a href="2025-03-PT-BR-SantacroceTech.pdf">Março 2025 - O Futuro da Tecnologia Descentralizada (Português)</a></li>
         </ul>
-    
-   <h2>Our Customers & Projects</h2>
-<ul>
-    <li><strong><a href="https://www.csdigital.io">CS Digital</a></strong> – A high-performance computing (HPC) company that delivers advanced solutions for AI, scientific research, finance, and large-scale data processing.  
-    <br><strong>Service provided:</strong> Tech advisory and software development for monitoring and maintenance of purpose-specific hardware.</li>
 
-    <li><strong><a href="http://imbued.art/foundation">Imbued</a></strong> – A digital art-based platform focused on cultural experiences, blockchain integration, and NFT innovation, engaging youth and pushing the boundaries of artistic interaction.  
-    <br><strong>Service provided:</strong> AI-powered PrivateGPT, mobile applications, and large-scale distributed backend storage solutions.</li>
+        <h2>Our Customers & Projects</h2>
+        <ul>
+            <li><strong><a href="https://www.csdigital.io">CS Digital</a></strong> – High-performance computing (HPC) for AI, research, and finance.  
+            <br><strong>Service:</strong> Tech advisory and software development.</li>
 
-    <li><strong><a href="https://preserva.land/index.php/about-us-preservaland/">Preserva Land</a></strong> – A sustainability-driven organization dedicated to native forest conservation, leveraging nature-based solutions to combat carbon emissions and biodiversity loss.  
-    <br><strong>Service provided:</strong> AI-driven robotics, NFT ecosystems, smart contracts, and tech advisory services.</li>
+            <li><strong><a href="http://imbued.art/foundation">Imbued</a></strong> – Digital art meets blockchain and NFT innovation.  
+            <br><strong>Service:</strong> AI-powered PrivateGPT, mobile apps, distributed storage.</li>
 
-    <li><strong><a href="https://br.linkedin.com/company/nunesereisadvogados">Nunes & Reis Advogados</a></strong> – A legal advisory firm with over 30 years of expertise, providing legal services across various business sectors and family law.  
-    <br><strong>Service provided:</strong> PrivateGPT solutions for legal AI applications.</li>
+            <li><strong><a href="https://preserva.land/index.php/about-us-preservaland/">Preserva Land</a></strong> – Sustainability and native forest conservation.  
+            <br><strong>Service:</strong> AI robotics, NFT ecosystems, smart contracts.</li>
 
-    <li><strong><a href="https://eurobit.es">Eurobit</a></strong> – A blockchain consulting firm specializing in advisory services and the development of new blockchain-based products.  
-    <br><strong>Service provided:</strong> Blockchain advisory and new product development.</li>
-</ul>
- 
-   <h2>Contact Us</h2>
+            <li><strong><a href="https://br.linkedin.com/company/nunesereisadvogados">Nunes & Reis Advogados</a></strong> – Legal advisory firm with AI-powered legal solutions.  
+            <br><strong>Service:</strong> PrivateGPT legal AI applications.</li>
+
+            <li><strong><a href="https://eurobit.es">Eurobit</a></strong> – Blockchain consulting and product development.  
+            <br><strong>Service:</strong> Blockchain advisory and product innovation.</li>
+        </ul>
+
+        <h2>Contact Us</h2>
         <p>Email: <a href="mailto:info@santacroce.xyz">info@santacroce.xyz</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/company/santacroce-tech" target="_blank">Santacroce Tech Digital Services</a></p>
- 
     </div>
-    <img src="image.png" alt="Company Artwork">
+
 </body>
 </html>
 
